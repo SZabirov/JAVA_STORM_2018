@@ -6,7 +6,7 @@ import java.util.List;
 public interface DataStorage {
     List<Product> findAll();
     Product findById(int id) throws FileNotFoundException;
-    Product findMostExpensiveProduct();
+    Product findMostExpensiveProduct() throws FileNotFoundException;
 
     /**
      * Сохраняет изменения в существующем

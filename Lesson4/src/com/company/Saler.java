@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.FileNotFoundException;
+
 public class Saler {
     DataStorage ds;
 
@@ -7,7 +9,7 @@ public class Saler {
         this.ds = ds;
     }
 
-    void saleProductById(int id) {
+    void saleProductById(int id) throws FileNotFoundException {
         Product p = ds.findById(id);
         System.out.println("С вас " + p.price + " рублей");
         p.count--;

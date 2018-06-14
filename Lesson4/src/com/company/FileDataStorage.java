@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileDataStorage implements DataStorage {
+    String rep = "github.com/SZabirov/JAVA_STORM_2018";
     File productsFile;
 
     public FileDataStorage(File productsFile) {
@@ -27,6 +28,18 @@ public class FileDataStorage implements DataStorage {
             }
         }
         return null;
+    }
+
+    @Override
+    public Product findMostExpensiveProduct() throws FileNotFoundException {
+        List<Product> products = loadProducts();
+        Product mostExpensive = products.get(0);
+        for (int i = 1; i < products.size(); i++) {
+            if (products.get(i).price > mostExpensive.price) {
+                mostExpensive = products.get(i);
+            }
+        }
+        return mostExpensive;
     }
 
     @Override
