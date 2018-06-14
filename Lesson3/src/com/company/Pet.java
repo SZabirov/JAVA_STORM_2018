@@ -1,6 +1,6 @@
 package com.company;
 
-public class Pet {
+public abstract class Pet {
     int age;
     String name;
     int height;
@@ -13,6 +13,8 @@ public class Pet {
     void eat() {
         System.out.println("Я голоден, давай есть!");
     }
+
+    abstract void move();
 
     void voice(String word) {
         System.out.println("Ну окей, " + word);
